@@ -1,5 +1,6 @@
 import React, { Component } from "react"
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import Navbar from "./components/Navbar"
 import Main from "./pages/Main";
 import Saved from "./pages/Saved";
 import NotFound from "./pages/NotFound";
@@ -9,6 +10,7 @@ class App extends Component {
     return (
       <Router>
         <div>
+          <Navbar />
           <Switch>
             <Route exact path="/" component={Main} />
             <Route exact path="/saved" component={Saved} />

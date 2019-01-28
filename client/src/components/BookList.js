@@ -6,6 +6,6 @@ export const List = ({ children }) => (
     </ul>
 );
 
-export function ListItem({ children }) {
+export function ListBook({ children }) {
     return <li className="list-group-item">{children}</li>;
 };
