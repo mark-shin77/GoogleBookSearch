@@ -2,6 +2,7 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const routes = require("./routes");
+const path =require("path");
 
 // Initializing App
 const PORT = process.env.PORT || 5000;
@@ -25,6 +26,12 @@ mongoose.connect(
     useNewUrlParser: true
   }
 )
+
+// Send every request to the React app
+// Define any API routes before this runs
+app.get("*", function(req, res) {
+  res.sendFile(path.join(__dirname, "./client/build/index.html"));
+});
 
 // Connecting to PORT
 app.listen(PORT, function() {
