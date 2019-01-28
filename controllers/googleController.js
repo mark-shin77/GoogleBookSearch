@@ -5,25 +5,13 @@ const db = require("../models");
 // Defining CRUB methods for google , Filter function used to make sure we only get new books
 module.exports = {
     findAll: (req, res) => {
-        const { query : params } = req;
-        axios.get("https://www.googleapis.com/books/v1/volumes", { params })
-            .then( results => results.data.items.filter(
-                result => 
-                    result.volumeInfo.title &&
-                    result.volumeInfo.infoLink &&
-                    result.volumeInfo.authors &&
-                    result.volumeInfo.description &&
-                    result.volumeInfo.imageLinks &&
-                    result.volumeInfo.imagesLinks.thumbnail
-            ))
-            .then( apiBooks => 
-                db.Book.find().then( dbBooks =>
-                    apiBooks.filter( apiBook =>
-                        dbBooks.every(dbBook => dbBook.googleId.toString() !== apiBook.id)
-                    )
-                )
-            )
-            .then( books => res.json(books))
-            .catch(err => res.status(404).json(err))
+        var books = require('google-books-search');
+        books.search('Professional JavaScript for Web Developers', function (error, results) {
+            if (!error) {
+                res.json(results);
+            } else {
+                console.log(error);
+            }
+        })
     }
 };
