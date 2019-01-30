@@ -56,8 +56,6 @@ class Main extends Component {
         }).then(() => this.getBooks());
     };
 
-
-
     render() {
         return (
             <div>
@@ -113,7 +111,6 @@ class Main extends Component {
                             </Card>
                         </Col>
                     </Row>
-
                     <Footer />
                 </Container>
             </div>

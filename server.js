@@ -12,12 +12,12 @@ if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 }
 
-// Call Routes
-app.use(routes);
-
 // Body Parsing for AJAX requests
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+
+// Call Routes
+app.use(routes);
 
 // Connecting to DB
 mongoose.connect(
