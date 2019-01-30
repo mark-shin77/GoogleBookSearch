@@ -59,7 +59,7 @@ class Main extends Component {
     render() {
         return (
             <div>
-                <Container fluid="fluid">
+                <Container>
                     <Row>
                         <Col size="md-12">
                             <Jumbotron>
