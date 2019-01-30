@@ -69,7 +69,7 @@ class Main extends Component {
                     </Row>
                     <Row>
                         <Col size="md-12">
-                            <Card title="Search">
+                            <Card title="Search Book Title">
                                 <SearchForm 
                                     handleInputChange={this.handleInputChange}
                                     handleFormSubmit={this.handleFormSubmit}

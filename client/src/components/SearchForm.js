@@ -4,9 +4,6 @@ function Form({ q, handleInputChange, handleFormSubmit }) {
     return (
         <form>
             <div className="form-group">
-                <label htmlFor="Query">
-                    <strong>Book</strong>
-                </label>
                 <input
                     className="form-control"
                     id="Title"
