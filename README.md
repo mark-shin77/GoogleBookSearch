@@ -17,10 +17,8 @@ A simple full stack application where a user can search for books through the go
 Home
 ![Screen shot 1](/client/src/images/Home.png)
 <hr>
-<br>
 Results
 ![Screen shot 2](/client/src/images/Results.png)
 <hr>
-<br>
 Saved
 ![Screen shot 3](/client/src/images/SavedPage.png)
