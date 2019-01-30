@@ -22,10 +22,9 @@ app.use(routes);
 // Connecting to DB
 mongoose.connect(
   process.env.MONGODB_URI || "mongodb://localhost/googlebooks", {
-    useCreateIndex: true,
+    useCreateIndex: true,  
     useNewUrlParser: true
-  }
-);
+  });
 
 // Connecting to PORT
 app.listen(PORT, function() {

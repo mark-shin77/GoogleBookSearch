@@ -6,13 +6,13 @@ function Book({ title, subtitle, authors, link, description, image, Button }) {
     return (
         <ListBook>
             <Row className="flex-wrap-reverse">
-                <Col size="md-8">
+                <Col size="md-10 sm-8">
                     <h3 className="font-italic">{title}</h3>
                     {subtitle && <h5 className="font-italic">{subtitle}</h5>}
                 </Col>
-                <Col size="md-4">
+                <Col size="md-2 sm-4">
                     <div className="btn-container">
-                        <a className="btn btn-light" target="_blank" rel="noopener noreferrer" href={link}>
+                        <a className="btn btn-outline-secondary" target="_blank" rel="noopener noreferrer" href={link}>
                             View
             </a>
                         <Button />

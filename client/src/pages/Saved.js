@@ -1,8 +1,7 @@
-import React, { Component } from "react";
+import React, { Component, Fragment } from "react";
 import Jumbotron from "../components/Jumbotron";
 import Card from "../components/Card";
 import Book from "../components/BookInfo";
-import Footer from "../components/Footer";
 import API from "../utils/API";
 import { Col, Row, Container } from "../components/Grid";
 import { List } from "../components/BookList";
@@ -32,7 +31,7 @@ class Saved extends Component {
 
     render() {
         return (
-        <Container>
+        <Container fluid="fluid">
             <Row>
             <Col size="md-12">
                 <Jumbotron>
@@ -62,7 +61,7 @@ class Saved extends Component {
                         Button={() => (
                             <button
                             onClick={() => this.handleBookDelete(book._id)}
-                            className="btn btn-danger ml-2"
+                            className="btn btn-outline-danger ml-2"
                             >
                             Delete
                             </button>
@@ -76,7 +75,7 @@ class Saved extends Component {
                 </Card>
             </Col>
             </Row>
-            <Footer />
+            {this.state.books.length ? <br /> : <Fragment><br /><br /><br /><br /><br /><br /><br /></Fragment>}
         </Container>
         );
     }

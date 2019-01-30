@@ -9,6 +9,7 @@ module.exports = {
         axios
             .get("https://www.googleapis.com/books/v1/volumes", { params })
             .then( results => results.data.items.filter (
+                // Going through to only pull wanted data
                 result => 
                     result.volumeInfo.title &&
                     result.volumeInfo.infoLink &&
@@ -17,6 +18,7 @@ module.exports = {
                     result.volumeInfo.imageLinks &&
                     result.volumeInfo.imageLinks.thumbnail
             ))
+            // Filtering through data and only getting books which are not saved
             .then(apiBooks => 
                 db.Book.find().then(dbBooks => 
                     apiBooks.filter(apiBook => 

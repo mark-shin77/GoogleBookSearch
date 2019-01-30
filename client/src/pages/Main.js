@@ -5,14 +5,13 @@ import Card from "../components/Card";
 import SearchForm from "../components/SearchForm";
 import Book from "../components/BookInfo";
 import { List } from "../components/BookList";
-import Footer from '../components/Footer';
 import API from "../utils/API";
 
 class Main extends Component {
     state = {
         books: [],
         q: "",
-        message: "Search For A Book To Begin!"
+        message: "Search for you favorite book to begin!"
     };
 
     handleInputChange = event => {
@@ -32,7 +31,7 @@ class Main extends Component {
             .catch(() =>
                 this.setState({
                     books: [],
-                    message: "No New Books Found, Try a Different Query"
+                    message: "Looks like there are no new books with that title, Try again!"
                 })
             );
     };
@@ -59,7 +58,7 @@ class Main extends Component {
     render() {
         return (
             <div>
-                <Container>
+                <Container fluid="fluid">
                     <Row>
                         <Col size="md-12">
                             <Jumbotron>
@@ -96,7 +95,7 @@ class Main extends Component {
                                                 Button={() => (
                                                     <button
                                                         onClick={() => this.handleBookSave(book.id)}
-                                                        className="btn btn-primary ml-2"
+                                                        className="btn btn-outline-info ml-2"
                                                     >
                                                         Save
                                                     </button>
@@ -105,14 +104,14 @@ class Main extends Component {
                                         ))}
                                     </List>
                                 ) : (
-                                        <h2 className="text-center">{this.state.message}</h2>
+                                        <h3 className="text-center">{this.state.message}</h3>
                                     )}
 
                             </Card>
                         </Col>
                     </Row>
-                    <Footer />
                 </Container>
+                <br />
             </div>
         )
     }

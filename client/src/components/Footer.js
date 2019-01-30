@@ -3,9 +3,8 @@ import React from "react";
 function Footer() {
     return (
         <footer>
-            <hr />
-            <p className="pull-right">
-                <i className="fab fa-github" /> Proudly built using React.js
+            <p>
+                Built using React js. {'\u00A9'} Mark Shin 2019
             </p>
         </footer>
     );
