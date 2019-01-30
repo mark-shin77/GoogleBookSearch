@@ -14,9 +14,9 @@ A simple full stack application where a user can search for books through the go
 - Bootstrap
 
 ## ScreenShot
-Home Page
+### Home Page
 ![Screen shot 1](/client/src/images/HomePage.png)
-Results
+### Results
 ![Screen shot 2](/client/src/images/Results.png)
-Saved
+### Saved
 ![Screen shot 3](/client/src/images/SavedPage.png)
