@@ -3,7 +3,6 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Navbar from "./components/Navbar"
 import Main from "./pages/Main";
 import Saved from "./pages/Saved";
-import NotFound from "./pages/NotFound";
 
 class App extends Component {
   render() {
@@ -14,7 +13,6 @@ class App extends Component {
           <Switch>
             <Route exact path="/" component={Main} />
             <Route exact path="/saved" component={Saved} />
-            <Route component={NotFound} />
           </Switch>
         </div>
       </Router>
